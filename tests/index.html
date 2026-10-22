@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tests — gym app</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 1.5rem; background: #1a1a1a; color: #e0e0e0; }
+    h1   { font-size: 1.3rem; margin-bottom: 1rem; }
+    h2   { font-size: 1rem; margin: 1.25rem 0 .5rem; color: #a0a0a0; }
+    p    { margin: .2rem 0; font-size: .9rem; }
+    .pass    { color: #81c784; }
+    .fail    { color: #ef5350; font-weight: 600; }
+    .resumen { margin-top: 1rem; font-size: 1.1rem; font-weight: 700; border-top: 1px solid #444; padding-top: .5rem; }
+  </style>
+</head>
+<body>
+  <h1>Tests — gym app</h1>
+  <div id="test-results"></div>
+  <script type="module">
+    import { resultados as rCalc, pasados as pCalc, fallidos as fCalc, total as tCalc } from './calc.test.js';
+    import { resultados as rIo,   pasados as pIo,   fallidos as fIo,   total as tIo   } from './io.test.js';
+
+    const div = document.getElementById('test-results');
+
+    function renderSuite(nombre, resultados) {
+      const h = document.createElement('h2');
+      h.textContent = nombre;
+      div.appendChild(h);
+      for (const r of resultados) {
+        const p = document.createElement('p');
+        p.className = r.ok ? 'pass' : 'fail';
+        p.textContent = (r.ok ? '✓ ' : '✗ ') + r.nombre + (r.error ? ` — ${r.error}` : '');
+        div.appendChild(p);
+      }
+    }
+
+    renderSuite('calc.js', rCalc);
+    renderSuite('io.js',   rIo);
+
+    const totalP = pCalc + pIo;
+    const totalF = fCalc + fIo;
+    const res = document.createElement('p');
+    res.className = 'resumen ' + (totalF === 0 ? 'pass' : 'fail');
+    res.textContent = `${totalP}/${totalP + totalF} tests pasaron`;
+    div.appendChild(res);
+  </script>
+</body>
+</html>
