@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gym — App personal de registro de entrenamiento
 
 PWA offline-first para registrar sesiones de gimnasio, ver el progreso de fuerza y exportar los datos. Sin backend, sin cuentas, sin red en tiempo de ejecución. Los datos viven en el dispositivo (IndexedDB).
@@ -128,3 +129,6 @@ El repositorio puede ser público. **Ningún dato personal se sube nunca**: los 
 > Los datos en IndexedDB se borran si se limpia el almacenamiento del sitio en Chrome.
 
 La app muestra un recordatorio cada 14 días (configurable en Config) para exportar el respaldo completo como JSON. Guárdalo en un lugar seguro (Google Drive, etc.). Para restaurar, usa la opción **Importar respaldo JSON** en la sección Config.
+=======
+# GYM
+>>>>>>> 265d64329c720507757478bd5cf9cf78f666f0c5
