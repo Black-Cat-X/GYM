@@ -774,25 +774,42 @@ label {
 }
 
 .serie-fila {
-  display: flex;
-  align-items: flex-end;
-  gap: .4rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 22px 1fr 1fr 30px;
+  align-items: end;
+  gap: .25rem .35rem;
+}
+
+.serie-fila:has(.peso-total-disp) {
+  grid-template-columns: 22px 1fr auto 1fr 30px;
+}
+
+.serie-fila .campo-inline input {
+  padding: .3rem .35rem;
+  font-size: .85rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.serie-fila .btn-del-serie {
+  min-width: 30px;
+  min-height: 30px;
+  padding: .15rem;
+  font-size: .9rem;
 }
 
 .serie-n {
-  font-size: .8rem;
+  font-size: .78rem;
   color: var(--texto2);
-  min-width: 22px;
-  padding-bottom: .45rem;
+  padding-bottom: .35rem;
+  line-height: 1.4;
 }
 
 .peso-total-disp {
-  font-size: .78rem;
+  font-size: .72rem;
   color: var(--primario);
   white-space: nowrap;
-  padding-bottom: .45rem;
-  min-width: 72px;
+  padding-bottom: .35rem;
 }
 
 .btn-add-serie {

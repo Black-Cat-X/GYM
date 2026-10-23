@@ -44,7 +44,7 @@ function htmlDia(dia, exMap, cfg) {
           <span class="dia-nombre">${DIAS_LABEL[dia.dia_semana] ?? dia.dia_semana}</span>
           <span class="lugar-chip">${lugar}</span>
         </div>
-        <button class="btn-icono btn-editar-dia" data-dia="${dia.dia_semana}" title="Editar día">✏️</button>
+        <button class="btn-icono btn-editar-dia" data-dia="${dia.dia_semana}" title="Editar día"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></button>
       </div>
       ${dia.nombre ? `<p class="dia-subtitulo">${dia.nombre}</p>` : ''}
       <ol class="rutina-lista">${items || '<li class="rutina-vacio">Sin ejercicios</li>'}</ol>

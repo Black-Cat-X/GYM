@@ -65,8 +65,8 @@ function htmlCard(ex, refs, volMap, prMap, objMap) {
           <span class="chip chip-tipo">${ex.tipo}</span>
         </div>
         <div class="ejercicio-acciones">
-          <button class="btn-icono btn-editar-ex" data-id="${ex.id}" title="Editar">✏️</button>
-          ${esRef ? '' : `<button class="btn-icono btn-borrar-ex" data-id="${ex.id}" title="Eliminar">🗑️</button>`}
+          <button class="btn-icono btn-editar-ex" data-id="${ex.id}" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></button>
+          ${esRef ? '' : `<button class="btn-icono btn-borrar-ex" data-id="${ex.id}" title="Eliminar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg></button>`}
         </div>
       </div>
       <p class="ejercicio-musculos">

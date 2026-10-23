@@ -434,8 +434,8 @@ function htmlHistItem(ses) {
         ${nota}
       </div>
       <div class="hist-acciones">
-        <button class="btn-icono btn-edit-ses" data-id="${ses.id}" title="Editar">✏️</button>
-        <button class="btn-icono btn-del-ses btn-danger"  data-id="${ses.id}" title="Borrar">🗑️</button>
+        <button class="btn-icono btn-edit-ses" data-id="${ses.id}" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M17 3a2.828 2.828 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></button>
+        <button class="btn-icono btn-del-ses btn-danger"  data-id="${ses.id}" title="Borrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg></button>
       </div>
     </li>`;
 }
