@@ -1,4 +1,4 @@
-import { put, setConfig, setMeta, getRutinaVigente, getAll, uuid } from './db.js';
+import { put, setConfig, getMeta, setMeta, getRutinaVigente, getAll, uuid } from './db.js';
 
 export const MUSCULOS = {
   push: ['pecho superior', 'pecho medio', 'deltoides anterior', 'deltoides lateral', 'tríceps'],
