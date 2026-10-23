@@ -1,7 +1,7 @@
 // Construye la base relativa al scope del SW — funciona en user-pages y project-pages de GitHub Pages
 const BASE = new URL('./', self.location.href).href;
 
-const CACHE_VERSION = 'gym-v7';
+const CACHE_VERSION = 'gym-v8';
 
 const SHELL = [
   BASE,

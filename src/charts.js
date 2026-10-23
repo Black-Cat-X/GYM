@@ -7,7 +7,7 @@ const M = { top: 18, right: 18, bottom: 48, left: 54 };
 const PW = W - M.left - M.right;   // ancho del área de graficado
 const PH = H - M.top  - M.bottom;  // alto del área de graficado
 
-const COLOR = { push: '#ef9a9a', pull: '#90caf9', leg: '#a5d6a7' };
+const COLOR = { push: '#e07878', pull: '#4f8ef7', leg: '#5ab88a' };
 const FONT  = 'font-family="system-ui,-apple-system,sans-serif"';
 
 // ── API pública ───────────────────────────────────────────────────────────────
