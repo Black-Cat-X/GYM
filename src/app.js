@@ -85,7 +85,7 @@ async function mostrarRecordatorioRespaldo() {
 
 async function init() {
   await openDB();
-  await navigator.storage?.persist?.();
+  await navigator.storage?.persist?.().catch(() => {});
   await sembrarSiNecesario();
 
   const necesitaSetup = await mostrarAsistenteSiNecesario(contenedorSetup);
@@ -94,15 +94,21 @@ async function init() {
     window.addEventListener('setup-completo', async () => {
       appShell.hidden = false;
       await mostrarVista('rutina');
-      await mostrarRecordatorioRespaldo();
+      await mostrarRecordatorioRespaldo().catch(() => {});
     }, { once: true });
   } else {
     await mostrarVista('rutina');
-    await mostrarRecordatorioRespaldo();
+    await mostrarRecordatorioRespaldo().catch(() => {});
   }
 }
 
 init().catch(err => {
   console.error('Error al iniciar la app:', err);
-  document.body.innerHTML = `<p class="error-fatal">Error al iniciar la app. Recarga la página.</p>`;
+  document.body.innerHTML = `
+    <div style="padding:2rem;font-family:system-ui,sans-serif;background:#1a1a1a;color:#e0e0e0;min-height:100dvh">
+      <h2 style="color:#ef5350;margin-bottom:1rem">Error al iniciar la app</h2>
+      <p style="font-size:.9rem;margin-bottom:.5rem"><strong>Mensaje:</strong> ${err?.message ?? String(err)}</p>
+      <pre style="font-size:.75rem;color:#a0a0a0;white-space:pre-wrap;word-break:break-all">${err?.stack ?? ''}</pre>
+      <button onclick="location.reload()" style="margin-top:1.5rem;padding:.75rem 1.5rem;background:#4caf50;color:#fff;border:none;border-radius:8px;font-size:1rem;cursor:pointer">Reintentar</button>
+    </div>`;
 });
